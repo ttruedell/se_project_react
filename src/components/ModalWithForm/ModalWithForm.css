@@ -1,0 +1,92 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  height: 20px;
+  width: 20px;
+}
+
+.modal__content {
+  border: 1px solid #0000004d;
+  border-radius: 20px;
+  position: relative;
+  background-color: #fff;
+  /* width: 440px; */
+  /* height: 372px; */
+  max-width: 496px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 28px 28px 36px 28px;
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
+
+.modal__title {
+  margin: 0 0 24px 0;
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #000000;
+  margin: 8px 0 24px 0;
+}
+
+.modal__form {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__legend {
+  margin-bottom: 12px;
+}
+
+.modal__label_type_radio {
+  margin-bottom: 8px;
+}
+
+.modal__label_type_radio:last-child {
+  margin-bottom: 32px;
+}
+
+.modal__submit {
+  margin: 0;
+  padding: 8px 16px;
+  width: 124px;
+  height: 36px;
+  color: #fff;
+  background: #0000004d;
+  border-radius: 4px;
+  border: 0px solid #0000004d;
+}

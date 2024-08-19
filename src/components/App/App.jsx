@@ -21,17 +21,28 @@ function App() {
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
-  const closeActiveModal = () => {
-    setActiveModal("");
+  // const closeActiveModal = () => {
+  //   setActiveModal("");
+  // };
+
+  const closeActiveModal = (event) => {
+    if (!event) {
+      setActiveModal("");
+      return;
+    }
+
+    if (event.type === "keydown" && event.key === "Escape") {
+      setActiveModal("");
+    } else if (event.type === "click") {
+      if (event.target.classList.contains("modal__opened")) {
+        setActiveModal("");
+      }
+    }
   };
+
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
-  };
-  const handleClickOutside = (event) => {
-    if (event.target.classList.contains("modal__opened")) {
-      /*onClose()*/ closeActiveModal();
-    }
   };
 
   useEffect(() => {
@@ -44,18 +55,12 @@ function App() {
   });
 
   useEffect(() => {
-    function handleEscClose(event) {
-      if (event.key === "Escape") {
-        /*onClose()*/ closeActiveModal();
-      }
-    }
-
-    document.addEventListener("keydown", handleEscClose);
+    document.addEventListener("keydown", closeActiveModal);
 
     return () => {
-      document.removeEventListener("keydown", handleEscClose);
+      document.removeEventListener("keydown", closeActiveModal);
     };
-  }, [/*onClose*/ closeActiveModal]);
+  }, []);
 
   return (
     <div className="page">
@@ -69,8 +74,9 @@ function App() {
         title="New garment"
         name="addGarmentForm"
         activeModal={activeModal}
-        onClose={closeActiveModal}
-        clickOutside={handleClickOutside}
+        onClose={() => {
+          closeActiveModal();
+        }}
       >
         <label htmlFor="name" className="modal__label">
           Name{" "}
@@ -129,8 +135,9 @@ function App() {
       <ItemModal
         activeModal={activeModal}
         card={selectedCard}
-        onClose={closeActiveModal}
-        clickOutside={handleClickOutside}
+        onClose={() => {
+          closeActiveModal();
+        }}
       />
     </div>
   );

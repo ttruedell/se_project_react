@@ -1,11 +1,10 @@
 import "./ItemModal.css";
 import closeButton from "../../assets/Union2.svg";
 
-function ItemModal({ activeModal, onClose, /*clickOutside,*/ card }) {
+function ItemModal({ activeModal, onClose, card }) {
   return (
     <div
-      className={`modal ${activeModal === "preview" && "modal__opened"}`}
-      // onClick={clickOutside}
+      className={`modal ${activeModal === "preview" && "modal_opened"}`}
       onClick={onClose}
     >
       <div className="modal__content modal__content_type_image">

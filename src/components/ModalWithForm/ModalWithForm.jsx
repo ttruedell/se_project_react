@@ -8,14 +8,12 @@ function ModalWithForm({
   name,
   activeModal,
   onClose,
-  // clickOutside,
 }) {
   return (
     <div
       className={`modal modal_type_${name}  ${
-        activeModal === "add-garment" && "modal__opened"
+        activeModal === "add-garment" && "modal_opened"
       }`}
-      // onClick={clickOutside}
       onClick={onClose}
     >
       <div className="modal__content">

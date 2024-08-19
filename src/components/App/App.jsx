@@ -21,20 +21,20 @@ function App() {
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
-  // const closeActiveModal = () => {
-  //   setActiveModal("");
-  // };
+  const closeActiveModal = () => {
+    setActiveModal("");
+  };
 
-  let closeActiveModal = (event) => {
+  const handleModalClose = (event) => {
     if (event.type === "keydown" && event.key === "Escape") {
-      setActiveModal("");
+      closeActiveModal();
     } else if (event.type === "click") {
       if (
         (!event.target.closest(".modal__content") &&
           event.target.classList.contains("modal")) ||
         event.target.closest(".modal__close")
       ) {
-        setActiveModal("");
+        closeActiveModal();
       }
     }
   };
@@ -51,7 +51,7 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch(console.error);
-  });
+  }, []);
 
   useEffect(() => {
     document.addEventListener("keydown", closeActiveModal);

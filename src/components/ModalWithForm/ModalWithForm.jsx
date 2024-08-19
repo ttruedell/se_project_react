@@ -6,13 +6,14 @@ function ModalWithForm({
   buttonText,
   title,
   name,
-  activeModal,
+  // activeModal,
   onClose,
+  isOpen,
 }) {
   return (
     <div
       className={`modal modal_type_${name}  ${
-        activeModal === "add-garment" && "modal_opened"
+        isOpen /*activeModal === "add-garment"*/ && "modal_opened"
       }`}
       onClick={onClose}
     >

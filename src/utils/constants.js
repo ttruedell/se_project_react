@@ -130,8 +130,12 @@ export const defaultClothingItems = [
 export const coordinates = {
   latitude: 32.0809,
   longitude: -81.0912,
-  // latitude: 33.74446,
-  // longitude: -118.38702,
+  // Rancho Palos Verdes
+  latitude: 33.74446,
+  longitude: -118.38702,
+  // London
+  // lattitude: 51.509865,
+  // longitude: -0.118092,
 };
 
 export const ApiKey = "957cc880bbd931e0e77b5f1f67138e24";

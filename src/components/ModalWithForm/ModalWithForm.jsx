@@ -5,16 +5,21 @@ function ModalWithForm({
   children,
   buttonText,
   title,
+  name,
   activeModal,
-  handleCloseClick,
+  onClose,
+  clickOutside,
 }) {
   return (
     <div
-      className={`modal ${activeModal === "add-garment" && "modal__opened"}`}
+      className={`modal modal_type_${name}  ${
+        activeModal === "add-garment" && "modal__opened"
+      }`}
+      onClick={clickOutside}
     >
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
-        <button onClick={handleCloseClick} className="modal__close">
+        <button onClick={onClose} className="modal__close">
           <img src={closeButton} alt="close-btn" />
         </button>
         <form action="submit" className="modal__form">

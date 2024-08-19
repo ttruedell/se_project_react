@@ -28,16 +28,34 @@ function App() {
     setActiveModal("preview");
     setSelectedCard(card);
   };
+  const handleClickOutside = (event) => {
+    if (event.target.classList.contains("modal__opened")) {
+      /*onClose()*/ closeActiveModal();
+    }
+  };
 
   useEffect(() => {
     getWeather(coordinates, ApiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
-        // debugger;
       })
       .catch(console.error);
   });
+
+  useEffect(() => {
+    function handleEscClose(event) {
+      if (event.key === "Escape") {
+        /*onClose()*/ closeActiveModal();
+      }
+    }
+
+    document.addEventListener("keydown", handleEscClose);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [/*onClose*/ closeActiveModal]);
 
   return (
     <div className="page">
@@ -49,8 +67,10 @@ function App() {
       <ModalWithForm
         buttonText="Add garment"
         title="New garment"
+        name="addGarmentForm"
         activeModal={activeModal}
-        handleCloseClick={closeActiveModal}
+        onClose={closeActiveModal}
+        clickOutside={handleClickOutside}
       >
         <label htmlFor="name" className="modal__label">
           Name{" "}
@@ -109,7 +129,8 @@ function App() {
       <ItemModal
         activeModal={activeModal}
         card={selectedCard}
-        handleCloseClick={closeActiveModal}
+        onClose={closeActiveModal}
+        clickOutside={handleClickOutside}
       />
     </div>
   );

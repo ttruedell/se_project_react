@@ -21,8 +21,14 @@ function App() {
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
-  const closeActiveModal = () => {
-    setActiveModal("");
+  const closeActiveModal = (event) => {
+    if (!event) {
+      return setActiveModal("");
+    }
+
+    if (handleModalClose(event)) {
+      setActiveModal("");
+    }
   };
 
   const handleModalClose = (event) => {
@@ -56,9 +62,9 @@ function App() {
   useEffect(() => {
     if (!activeModal) return;
 
-    const handleEscClose = (e) => {
+    const handleEscClose = (event) => {
       // define the function inside useEffect not to lose the reference on rerendering
-      if (e.key === "Escape") {
+      if (event.key === "Escape") {
         closeActiveModal();
       }
     };

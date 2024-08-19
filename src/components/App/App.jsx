@@ -25,16 +25,15 @@ function App() {
   //   setActiveModal("");
   // };
 
-  const closeActiveModal = (event) => {
-    if (!event) {
-      setActiveModal("");
-      return;
-    }
-
+  let closeActiveModal = (event) => {
     if (event.type === "keydown" && event.key === "Escape") {
       setActiveModal("");
     } else if (event.type === "click") {
-      if (event.target.classList.contains("modal__opened")) {
+      if (
+        (!event.target.closest(".modal__content") &&
+          event.target.classList.contains("modal")) ||
+        event.target.closest(".modal__close")
+      ) {
         setActiveModal("");
       }
     }
@@ -56,9 +55,11 @@ function App() {
 
   useEffect(() => {
     document.addEventListener("keydown", closeActiveModal);
+    document.addEventListener("click", closeActiveModal);
 
     return () => {
       document.removeEventListener("keydown", closeActiveModal);
+      document.removeEventListener("click", closeActiveModal);
     };
   }, []);
 
@@ -74,9 +75,7 @@ function App() {
         title="New garment"
         name="addGarmentForm"
         activeModal={activeModal}
-        onClose={() => {
-          closeActiveModal();
-        }}
+        onClose={closeActiveModal}
       >
         <label htmlFor="name" className="modal__label">
           Name{" "}
@@ -135,9 +134,7 @@ function App() {
       <ItemModal
         activeModal={activeModal}
         card={selectedCard}
-        onClose={() => {
-          closeActiveModal();
-        }}
+        onClose={closeActiveModal}
       />
     </div>
   );

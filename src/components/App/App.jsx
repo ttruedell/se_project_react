@@ -54,14 +54,26 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.addEventListener("keydown", closeActiveModal);
-    document.addEventListener("click", closeActiveModal);
+    if (!activeModal) return;
+
+    const handleEscClose = (e) => {
+      // define the function inside useEffect not to lose the reference on rerendering
+      if (e.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+
+    document.addEventListener("keydown", /*closeActiveModal*/ handleEscClose);
+    // document.addEventListener("click", closeActiveModal);
 
     return () => {
-      document.removeEventListener("keydown", closeActiveModal);
-      document.removeEventListener("click", closeActiveModal);
+      document.removeEventListener(
+        "keydown",
+        /*closeActiveModal*/ handleEscClose
+      );
+      // document.removeEventListener("click", closeActiveModal);
     };
-  }, []);
+  }, [activeModal]);
 
   return (
     <div className="page">

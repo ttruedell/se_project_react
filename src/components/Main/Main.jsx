@@ -12,16 +12,6 @@ function Main({ weatherData, handleCardClick }) {
   const temp = weatherData?.temp?.[currentTemperatureUnit];
   const tempLetter = currentTemperatureUnit;
 
-  // const getWeatherType = useMemo(() => {
-  //   if (temp > 86) {
-  //     return "hot";
-  //   } else if (temp >= 66 && temp < 86) {
-  //     return "warm";
-  //   } else {
-  //     return "cold";
-  //   }
-  // }, [weatherData]);
-
   return (
     <main className="main">
       <WeatherCard weatherData={weatherData} />

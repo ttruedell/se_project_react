@@ -66,31 +66,19 @@ function App() {
     if (!activeModal) return;
 
     const handleEscClose = (event) => {
-      // define the function inside useEffect not to lose the reference on rerendering
       if (event.key === "Escape") {
         closeActiveModal();
       }
     };
 
-    document.addEventListener("keydown", /*closeActiveModal*/ handleEscClose);
-    // document.addEventListener("click", closeActiveModal);
+    document.addEventListener("keydown", handleEscClose);
 
     return () => {
-      document.removeEventListener(
-        "keydown",
-        /*closeActiveModal*/ handleEscClose
-      );
-      // document.removeEventListener("click", closeActiveModal);
+      document.removeEventListener("keydown", handleEscClose);
     };
   }, [activeModal]);
 
   const handleToggleSwitchChange = () => {
-    // if (currentTemperatureUnit === "C") {
-    //   setCurrentTemperatureUnit("F");
-    // }
-    // if (currentTemperatureUnit === "F") {
-    //   setCurrentTemperatureUnit("C");
-    // }
     currentTemperatureUnit === "F"
       ? setCurrentTemperatureUnit("C")
       : setCurrentTemperatureUnit("F");
@@ -111,7 +99,6 @@ function App() {
           buttonText="Add garment"
           title="New garment"
           name="addGarmentForm"
-          // activeModal={activeModal}
           onClose={closeActiveModal}
           isOpen={activeModal === "add-garment"}
         >

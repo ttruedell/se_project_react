@@ -27,6 +27,7 @@
   font-weight: 700;
   line-height: 24px;
   text-align: left;
+  cursor: pointer;
 }
 
 .header__user-container {

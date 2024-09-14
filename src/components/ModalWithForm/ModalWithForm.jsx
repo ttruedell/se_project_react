@@ -1,20 +1,10 @@
 import "./ModalWithForm.css";
 import closeButton from "../../assets/Union.svg";
 
-function ModalWithForm({
-  children,
-  buttonText,
-  title,
-  name,
-  // activeModal,
-  onClose,
-  isOpen,
-}) {
+function ModalWithForm({ children, buttonText, title, name, onClose, isOpen }) {
   return (
     <div
-      className={`modal modal_type_${name}  ${
-        isOpen /*activeModal === "add-garment"*/ && "modal_opened"
-      }`}
+      className={`modal modal_type_${name}  ${isOpen && "modal_opened"}`}
       onClick={onClose}
     >
       <div className="modal__content">

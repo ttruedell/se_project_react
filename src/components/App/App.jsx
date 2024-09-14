@@ -109,7 +109,7 @@ function App() {
                 />
               }
             ></Route>
-            <Route path="/profile" element={<p></p>}></Route>
+            <Route path="/profile" element={<p>PROFILE</p>}></Route>
           </Routes>
 
           <Footer />

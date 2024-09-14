@@ -5,7 +5,8 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+// import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import Profile from "../Profile/Profile";
 import ItemModal from "../ItemModal/ItemModal";
 import { ApiKey, coordinates } from "../../utils/constants";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
@@ -109,7 +110,7 @@ function App() {
                 />
               }
             ></Route>
-            <Route path="/profile" element={<p>PROFILE</p>}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
           </Routes>
 
           <Footer />

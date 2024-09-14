@@ -13,7 +13,7 @@ import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
-    temp: { F: "" /*, C: 999 */ },
+    temp: { F: "", C: "" },
     city: "",
   });
   const [activeModal, setActiveModal] = useState("");
@@ -85,12 +85,15 @@ function App() {
   }, [activeModal]);
 
   const handleToggleSwitchChange = () => {
-    if (currentTemperatureUnit === "C") {
-      setCurrentTemperatureUnit("F");
-    }
-    if (currentTemperatureUnit === "F") {
-      setCurrentTemperatureUnit("C");
-    }
+    // if (currentTemperatureUnit === "C") {
+    //   setCurrentTemperatureUnit("F");
+    // }
+    // if (currentTemperatureUnit === "F") {
+    //   setCurrentTemperatureUnit("C");
+    // }
+    currentTemperatureUnit === "F"
+      ? setCurrentTemperatureUnit("C")
+      : setCurrentTemperatureUnit("F");
   };
 
   return (

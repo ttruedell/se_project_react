@@ -128,6 +128,7 @@ export const defaultClothingItems = [
 ];
 
 export const coordinates = {
+  // Savannah
   latitude: 32.0809,
   longitude: -81.0912,
   // Rancho Palos Verdes

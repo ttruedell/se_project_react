@@ -12,7 +12,7 @@ import { ApiKey, coordinates } from "../../utils/constants";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { getItems } from "../../utils/api";
+import { getItems, addItem, deleteItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -22,8 +22,8 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -57,11 +57,22 @@ function App() {
     setSelectedCard(card);
   };
 
-  const onAddItem = (values) => {
-    // e.preventDefault();
-    console.log(values);
-    // console.log(values);
+  const handleAddItemSubmit = (values) => {
+    addItem(values) // Call addItem from the API to make a POST request
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]); // Add the new item to the beginning of the state array
+      })
+      .catch((err) => console.error(err));
   };
+
+  // const onAddItem = (getItems) => {
+  //   AddItemModal(getItems)
+  //     .then((item) => {
+  //       setClothingItems([item, ...clothingItems]);
+  //       closeActiveModal();
+  //     })
+  //     .catch((err) => console.error(err));
+  // };
 
   useEffect(() => {
     getWeather(coordinates, ApiKey)
@@ -74,8 +85,10 @@ function App() {
 
   useEffect(() => {
     getItems()
-      .then((data) => {
-        console.log(data);
+      .then((items) => {
+        // console.log(data);
+        // Set the clothing items
+        setClothingItems(items);
       })
       .catch(console.error);
   }, []);
@@ -113,9 +126,11 @@ function App() {
             <Route
               path="/"
               element={
+                // pass clothingItems as a prop
                 <Main
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
                 />
               }
             ></Route>
@@ -130,7 +145,7 @@ function App() {
         <AddItemModal
           handleCloseModal={closeActiveModal}
           isOpen={activeModal === "add-garment"}
-          onAddItem={onAddItem}
+          onAddItem={handleAddItemSubmit}
         />
         {/* <ModalWithForm
           buttonText="Add garment"

@@ -14,8 +14,12 @@
   position: absolute;
   top: 15px;
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 2px 12px;
-  width: 67px;
+  /* max-width: 67px; */
   height: 20px;
   border-radius: 4px;
   font-family: "Cabinet Grotesk";

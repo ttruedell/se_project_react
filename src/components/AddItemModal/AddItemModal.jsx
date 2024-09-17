@@ -30,10 +30,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
     if (!weather) {
       return;
     }
-    // console.log("Form submitted with the following values:");
-    // console.log("Name:", name);
-    // console.log("Image URL:", imageURL);
-    // console.log("Weather:", weather);
 
     onAddItem({
       name,
@@ -63,7 +59,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
           value={name}
           onChange={handleNameChange}
           minLength="1"
-          maxLength="30"
+          maxLength="20"
           required
         />
       </label>

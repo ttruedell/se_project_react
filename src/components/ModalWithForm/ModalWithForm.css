@@ -6,12 +6,15 @@
   left: 0;
   background-color: #0000004d;
   display: flex;
+  opacity: 0;
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .modal_opened {
+  opacity: 1;
   visibility: visible;
 }
 

@@ -19,7 +19,13 @@
   cursor: pointer;
 }
 
-.cards__list {
+.clothes-section__items {
   justify-content: center;
   margin: 16px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 20px;
 }

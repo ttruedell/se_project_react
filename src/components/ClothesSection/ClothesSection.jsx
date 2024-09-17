@@ -9,7 +9,7 @@ function ClothesSection() {
         <p className="clothes-section__header_text">Your Items</p>
         <button className="clothes-section__header_button">+ Add new</button>
       </div>
-      <ul className="cards__list">
+      <ul className=/*"cards__list"*/ "clothes-section__items">
         {defaultClothingItems
           //   .filter((item) => {
           //     return item.weather === weatherData.type;

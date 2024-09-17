@@ -1,10 +1,9 @@
-.modal__content_type_image {
+/* .modal__content_type_image {
   padding: 0;
   border: 0;
   max-width: 498px;
-  /* overflow: hidden; */
   justify-content: center;
-}
+} */
 
 .modal__close_type_image {
   color: #fff;
@@ -18,7 +17,9 @@
 }
 
 .modal__footer {
-  padding: 20px 0 32px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 32px 0 32px;
   line-height: 24px;
 }
 
@@ -30,7 +31,13 @@
 
 .modal__weather {
   margin: 0;
-  padding-top: 12px;
+  padding: 12px 0 32px 32px;
   font-size: 20px;
   font-weight: 700;
+}
+
+.modal__delete-button {
+  color: red;
+  margin: 0 0 0 auto;
+  cursor: pointer;
 }

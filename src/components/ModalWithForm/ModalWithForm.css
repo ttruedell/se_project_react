@@ -48,6 +48,14 @@
   text-align: left;
 }
 
+.modal__content_type_image {
+  padding: 0;
+  border: 0;
+  max-width: 498px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
 .modal__title {
   margin: 0 0 24px 0;
   font-family: "Cabinet Grotesk";

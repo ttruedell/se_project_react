@@ -1,0 +1,14 @@
+.clothes-section__header {
+  display: flex;
+  flex-direction: row;
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.8px;
+  text-align: left;
+}
+
+.cards__list {
+  justify-content: center;
+  /* gap: 20px; */
+}

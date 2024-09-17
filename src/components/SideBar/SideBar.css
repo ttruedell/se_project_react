@@ -1,0 +1,14 @@
+.sidebar {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar__username {
+  margin: 0 0 0 16px;
+  flex-direction: row;
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.8px;
+  text-align: left;
+}

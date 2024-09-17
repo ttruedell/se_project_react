@@ -11,6 +11,7 @@ import { ApiKey, coordinates } from "../../utils/constants";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal";
 import { getItems, addItem, deleteItem } from "../../utils/api";
 
 function App() {
@@ -53,6 +54,11 @@ function App() {
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
+    setSelectedCard(card);
+  };
+
+  const handleDeleteClick = () => {
+    setActiveModal("delete-confirm");
     setSelectedCard(card);
   };
 
@@ -143,6 +149,23 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+          onDelete={handleDeleteClick}
+        />
+        <ConfirmDeleteModal
+          activeModal={activeModal}
+          onClose={closeActiveModal}
+          card={selectedCard}
+          onDelete={() => {
+            deleteItem(selectedCard._id)
+              .then(() => {
+                setClothingItems((prevItems) =>
+                  prevItems.filter((item) => item._id !== selectedCard._id)
+                );
+                closeActiveModal();
+              })
+              .catch((err) => console.error(err));
+          }}
+          // card={selectedCard}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>

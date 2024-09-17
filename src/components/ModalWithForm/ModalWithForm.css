@@ -59,11 +59,8 @@
 
 .modal__title {
   margin: 0 0 24px 0;
-  font-family: "Cabinet Grotesk";
   font-size: 16px;
-  font-weight: 700;
   line-height: 20px;
-  text-align: left;
 }
 
 .modal__form {

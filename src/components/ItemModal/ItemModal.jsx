@@ -5,7 +5,6 @@ function ItemModal({ activeModal, onClose, onDelete, card }) {
   const handleDeleteClick = (e) => {
     e.stopPropagation();
     onDelete(card);
-    // onClose();
   };
 
   return (
@@ -26,7 +25,6 @@ function ItemModal({ activeModal, onClose, onDelete, card }) {
           <p className="modal__delete-button" onClick={handleDeleteClick}>
             Delete item
           </p>
-          {/* <p className="modal__weather">Weather: {card.weather}</p> */}
         </div>
         <p className="modal__weather">Weather: {card.weather}</p>
       </div>

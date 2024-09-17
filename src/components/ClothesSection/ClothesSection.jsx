@@ -1,4 +1,3 @@
-// import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
 
@@ -15,21 +14,11 @@ function ClothesSection({ clothingItems, onCardClick, handleAddClick }) {
         </button>
       </div>
       <ul className="clothes-section__items">
-        {
-          /*defaultClothingItems*/ clothingItems
-            //   .filter((item) => {
-            //     return item.weather === weatherData.type;
-            //   })
-            .map((item) => {
-              return (
-                <ItemCard
-                  key={item._id}
-                  item={item}
-                  onCardClick={onCardClick}
-                />
-              );
-            })
-        }
+        {clothingItems.map((item) => {
+          return (
+            <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+          );
+        })}
       </ul>
     </div>
   );

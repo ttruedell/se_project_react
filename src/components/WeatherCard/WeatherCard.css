@@ -10,7 +10,7 @@
 
 .weather-card__temp {
   position: absolute;
-  font-family: Cabinet Grotesk;
+  font-family: "Cabinet Grotesk";
   font-size: 36px;
   font-weight: 700;
   line-height: 40px;

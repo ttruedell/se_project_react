@@ -103,8 +103,17 @@
   width: 124px;
   height: 36px;
   color: #fff;
-  background: #0000004d;
+  background: #000;
   border-radius: 4px;
   border: 0px solid #0000004d;
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal__submit:hover {
+  opacity: 60%;
+}
+
+.modal__submit:disabled {
+  opacity: 30%;
 }

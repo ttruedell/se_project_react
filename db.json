@@ -113,6 +113,12 @@
       "imageUrl": "https://images.pexels.com/photos/8612884/pexels-photo-8612884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "weather": "warm",
       "_id": 19
+    },
+    {
+      "name": "Sneakers",
+      "imageUrl": "https://images.pexels.com/photos/8381335/pexels-photo-8381335.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "weather": "warm",
+      "_id": 20
     }
   ]
 }

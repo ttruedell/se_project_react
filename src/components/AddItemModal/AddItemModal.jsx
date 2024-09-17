@@ -8,6 +8,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageURL] = useState("");
   const [weather, setWeather] = useState("");
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
   // use a useEffect hook to reset the input field state to empty strings when
   // the modal is opened
@@ -19,6 +20,14 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    if (name && imageUrl && weather) {
+      setIsSubmitDisabled(false);
+    } else {
+      setIsSubmitDisabled(true);
+    }
+  }, [name, imageUrl, weather]);
+
   // create onChange handlers corresponding to each state variable
   const handleNameChange = (e) => setName(e.target.value);
   const handleImageURLChange = (e) => setImageURL(e.target.value);
@@ -27,9 +36,9 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   function handleSubmit(e, values) {
     e.preventDefault();
 
-    if (!weather) {
-      return;
-    }
+    // if (!weather) {
+    //   return;
+    // }
 
     onAddItem({
       name,
@@ -48,6 +57,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
       onClose={handleCloseModal}
       isOpen={isOpen}
       onSubmit={handleSubmit}
+      isSubmitDisabled={isSubmitDisabled}
     >
       <label htmlFor="name" className="modal__label">
         Name{" "}

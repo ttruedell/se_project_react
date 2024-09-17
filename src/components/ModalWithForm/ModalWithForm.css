@@ -88,6 +88,7 @@
 
 .modal__label_type_radio {
   margin-bottom: 8px;
+  accent-color: black;
 }
 
 .modal__label_type_radio:last-child {

@@ -28,6 +28,7 @@
   background-color: transparent;
   height: 20px;
   width: 20px;
+  cursor: pointer;
 }
 
 .modal__content {
@@ -105,4 +106,5 @@
   background: #0000004d;
   border-radius: 4px;
   border: 0px solid #0000004d;
+  cursor: pointer;
 }

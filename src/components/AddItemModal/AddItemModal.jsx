@@ -6,7 +6,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   // declare state for each input field
   const [name, setName] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [imageUrl, setImageURL] = useState("");
   const [weather, setWeather] = useState("");
 
   // use a useEffect hook to reset the input field state to empty strings when
@@ -37,7 +37,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
 
     onAddItem({
       name,
-      imageURL,
+      imageUrl,
       weather,
     });
 
@@ -74,10 +74,9 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
           className="modal__input"
           id="imageURL"
           placeholder="Image URL"
-          value={imageURL}
+          value={imageUrl}
           onChange={handleImageURLChange}
           minLength="1"
-          maxLength="30"
           required
         />
       </label>

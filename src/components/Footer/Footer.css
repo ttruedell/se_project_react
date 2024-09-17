@@ -1,7 +1,18 @@
 .footer {
   display: flex;
+  position: absolute;
+  bottom: 0px;
+  left: 40px;
+  right: 30px;
+  /* width: 99%; */
 }
 
 .footer__year {
   margin-left: auto;
+  /* position: absolute;
+  right: 40px; */
 }
+
+/* .footer__developer {
+  margin-right: auto;
+} */

@@ -5,7 +5,7 @@ function ItemModal({ activeModal, onClose, onDelete, card }) {
   const handleDeleteClick = (e) => {
     e.stopPropagation();
     onDelete(card);
-    onClose();
+    // onClose();
   };
 
   return (

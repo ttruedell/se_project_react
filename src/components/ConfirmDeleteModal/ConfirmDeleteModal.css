@@ -1,0 +1,10 @@
+.modal__delete-confirm {
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+.modal__buttons {
+  display: flex;
+  flex-direction: column;
+}

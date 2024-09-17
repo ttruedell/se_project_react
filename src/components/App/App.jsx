@@ -57,7 +57,7 @@ function App() {
     setSelectedCard(card);
   };
 
-  const handleDeleteClick = () => {
+  const handleDeleteClick = (card) => {
     setActiveModal("delete-confirm");
     setSelectedCard(card);
   };
@@ -148,8 +148,8 @@ function App() {
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
-          onClose={closeActiveModal}
           onDelete={handleDeleteClick}
+          onClose={closeActiveModal}
         />
         <ConfirmDeleteModal
           activeModal={activeModal}
@@ -165,7 +165,6 @@ function App() {
               })
               .catch((err) => console.error(err));
           }}
-          // card={selectedCard}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>

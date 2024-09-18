@@ -40,13 +40,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
       name,
       imageUrl,
       weather,
-    })
-      .then(() => {
-        handleCloseModal();
-      })
-      .catch((err) => {
-        console.error("Failed to add item:", err);
-      });
+    });
   }
 
   return (

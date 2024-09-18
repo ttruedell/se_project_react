@@ -63,7 +63,7 @@ function App() {
   };
 
   const handleAddItemSubmit = (values) => {
-    addItem(values)
+    return addItem(values)
       .then((item) => {
         setClothingItems([item, ...clothingItems]);
       })

@@ -115,8 +115,8 @@
       "_id": 20
     },
     {
-      "name": "Sweater(A)",
-      "imageUrl": "https://images.pexels.com/photos/5603009/pexels-photo-5603009.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Sweater",
+      "imageUrl": "https://images.pexels.com/photos/5464589/pexels-photo-5464589.jpeg?auto=compress&cs=tinysrgb&w=600",
       "weather": "cold",
       "_id": 21
     }

@@ -33,16 +33,20 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   const handleImageURLChange = (e) => setImageURL(e.target.value);
   const handleWeatherChange = (e) => setWeather(e.target.value);
 
-  function handleSubmit(e, values) {
+  function handleSubmit(e) {
     e.preventDefault();
 
     onAddItem({
       name,
       imageUrl,
       weather,
-    });
-
-    handleCloseModal();
+    })
+      .then(() => {
+        handleCloseModal();
+      })
+      .catch((err) => {
+        console.error("Failed to add item:", err);
+      });
   }
 
   return (

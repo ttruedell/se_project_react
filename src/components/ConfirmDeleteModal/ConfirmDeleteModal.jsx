@@ -4,7 +4,6 @@ import closeButton from "../../assets/Union.svg";
 function ConfirmDeleteModal({ activeModal, onClose, onDelete, card }) {
   const handleConfirmDelete = () => {
     onDelete(card);
-    onClose();
   };
 
   const handleCancelConfirm = () => {

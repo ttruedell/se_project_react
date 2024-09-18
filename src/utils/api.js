@@ -1,9 +1,15 @@
 const baseUrl = "http://localhost:3001";
 
+function checkResponse(res) {
+  if (res.ok) {
+    console.log(res.status);
+    return res.json();
+  }
+  return Promise.reject(`Error ${res.status}`);
+}
+
 function getItems() {
-  return fetch(`${baseUrl}/items`).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
 const addItem = (item) => {
@@ -13,17 +19,13 @@ const addItem = (item) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(item),
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(checkResponse);
 };
 
 const deleteItem = (id) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(checkResponse);
 };
 
 export { getItems, addItem, deleteItem };

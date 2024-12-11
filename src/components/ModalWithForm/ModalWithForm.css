@@ -115,3 +115,25 @@
 .modal__submit:disabled {
   opacity: 30%;
 }
+
+.modal__switch-modal {
+  margin: 0;
+  padding: 8px 16px;
+  width: 124px;
+  height: 36px;
+  color: #000000;
+  background: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  opacity: 50%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal__switch-modal:hover {
+  opacity: 100%;
+}
+
+/* .modal__switch-modal:disabled {
+  opacity: 30%;
+} */

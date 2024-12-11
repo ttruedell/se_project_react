@@ -132,8 +132,8 @@ export const coordinates = {
   latitude: 32.0809,
   longitude: -81.0912,
   // Rancho Palos Verdes
-  latitude: 33.74446,
-  longitude: -118.38702,
+  // latitude: 33.74446,
+  // longitude: -118.38702,
   // London
   // lattitude: 51.509865,
   // longitude: -0.118092,

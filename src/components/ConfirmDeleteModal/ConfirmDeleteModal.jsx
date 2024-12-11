@@ -15,7 +15,7 @@ function ConfirmDeleteModal({ activeModal, onClose, onDelete, card }) {
       className={`modal ${activeModal === "delete-confirm" && "modal_opened"}`}
       onClick={onClose}
     >
-      <div className="modal__content modal__content_type_sdelete-confirm">
+      <div className="modal__content modal__content_type_delete-confirm">
         <button
           onClick={onClose}
           className="modal__close modal__close_type_delete-confirm"

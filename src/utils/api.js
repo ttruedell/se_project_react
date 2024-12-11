@@ -12,20 +12,61 @@ function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
-const addItem = (item) => {
+const addItem = (item, token) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(item),
   }).then(checkResponse);
 };
 
-const deleteItem = (id) => {
+const deleteItem = (id, token) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   }).then(checkResponse);
 };
 
-export { getItems, addItem, deleteItem, checkResponse };
+const updateProfile = (userData, token) => {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(userData),
+  }).then(checkResponse);
+};
+
+const addCardLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT", // Add like
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
+const removeCardLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE", // Remove like
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
+export {
+  getItems,
+  addItem,
+  deleteItem,
+  updateProfile,
+  addCardLike,
+  removeCardLike,
+  checkResponse,
+};

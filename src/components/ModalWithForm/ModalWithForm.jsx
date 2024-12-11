@@ -1,15 +1,18 @@
 import "./ModalWithForm.css";
+// import handleUserModal from "../App/App";
 import closeButton from "../../assets/Union.svg";
 
 function ModalWithForm({
   children,
-  buttonText,
+  buttonTextSubmit,
+  buttonTextSwitch,
   title,
   name,
   onClose,
   isOpen,
   onSubmit,
   isSubmitDisabled,
+  onSwitchModal,
 }) {
   return (
     <div
@@ -23,13 +26,24 @@ function ModalWithForm({
         </button>
         <form onSubmit={onSubmit} className="modal__form">
           {children}
-          <button
-            className="modal__submit"
-            type="submit"
-            disabled={isSubmitDisabled}
-          >
-            {buttonText}
-          </button>
+          <div>
+            <button
+              className="modal__submit"
+              type="submit"
+              disabled={isSubmitDisabled}
+            >
+              {buttonTextSubmit}
+            </button>
+            {
+              <button
+                className="modal__switch-modal"
+                type="button"
+                onClick={onSwitchModal}
+              >
+                {buttonTextSwitch}
+              </button>
+            }
+          </div>
         </form>
       </div>
     </div>

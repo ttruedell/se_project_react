@@ -7,7 +7,8 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 
 function Header({
-  /*handleAddClick,*/ handleSignUpClick,
+  handleAddClick,
+  handleSignUpClick,
   handleLoginClick,
   weatherData,
 }) {
@@ -30,13 +31,13 @@ function Header({
         {currentDate}, {weatherData.city}
       </p>
       <ToggleSwitch />
-      {/* <button
+      <button
         onClick={handleAddClick}
         className="header__add-clothes-btn"
         type="button"
       >
         + Add clothes
-      </button> */}
+      </button>
 
       {currentUser ? (
         <Link to="/profile" className="header__link">

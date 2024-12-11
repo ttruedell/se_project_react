@@ -252,9 +252,8 @@ function App() {
         >
           <div className="page__content">
             <Header
-              /*handleAddClick={handleAddClick}*/ handleSignUpClick={
-                handleSignUpClick
-              }
+              handleAddClick={handleAddClick}
+              handleSignUpClick={handleSignUpClick}
               handleLoginClick={handleLoginClick}
               weatherData={weatherData}
             />

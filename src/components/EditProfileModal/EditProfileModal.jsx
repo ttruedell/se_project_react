@@ -1,18 +1,20 @@
 // import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 const EditProfileModal = ({
   isOpen,
   handleCloseModal,
   changeProfileData,
-  currentUser,
+  // currentUser,
 }) => {
   // declare state for each input field
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
+  const currentUser = useContext(CurrentUserContext);
   // use a useEffect hook to apply the current user's name and avatar url values
   // to the input field state when the modal is opened
   useEffect(() => {

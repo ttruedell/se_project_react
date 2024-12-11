@@ -310,7 +310,7 @@ function App() {
           <EditProfileModal
             handleCloseModal={closeActiveModal}
             isOpen={activeModal === "change-profile"}
-            currentUser={currentUser}
+            // currentUser={currentUser}
             changeProfileData={handleProfileUpdate}
           />
           <LogOutConfirmModal

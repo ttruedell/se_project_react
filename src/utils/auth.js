@@ -1,11 +1,13 @@
+import { checkResponse } from "../utils/api";
+
 const baseUrl = "http://localhost:3001";
 
-function checkResponse(res) {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject(`Error ${res.status}`);
-}
+// function checkResponse(res) {
+//   if (res.ok) {
+//     return res.json();
+//   }
+//   return Promise.reject(`Error ${res.status}`);
+// }
 
 const getCurrentUser = (token) => {
   return fetch(`${baseUrl}/users/me`, {
@@ -37,4 +39,4 @@ const signIn = ({ email, password }) => {
   }).then(checkResponse);
 };
 
-export { getCurrentUser, signIn, signUp, checkResponse };
+export { getCurrentUser, signIn, signUp };

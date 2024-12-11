@@ -280,7 +280,6 @@ function App() {
                     loggedIn={loggedIn}
                     changeProfileData={handleProfileDataChangeClick}
                     onLogOutClick={handleLogOutClick}
-                    currentUser
                     onCardLike={handleCardLike}
                   />
                 }

@@ -51,7 +51,7 @@ const EditProfileModal = ({
       onSubmit={handleSubmit}
       isSubmitDisabled={isSubmitDisabled}
     >
-      <label htmlFor="name" className="modal__label">
+      <label /*htmlFor="name"*/ className="modal__label">
         Name{" "}
         <input
           type="name"
@@ -63,7 +63,7 @@ const EditProfileModal = ({
           required
         />
       </label>
-      <label htmlFor="avatar-url" className="modal__label">
+      <label /*htmlFor="avatar-url"*/ className="modal__label">
         Password{" "}
         <input
           type="url"

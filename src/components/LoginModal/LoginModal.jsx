@@ -53,7 +53,7 @@ const LoginModal = ({
       isSubmitDisabled={isSubmitDisabled}
       onSwitchModal={handleUserModal}
     >
-      <label htmlFor="email" className="modal__label">
+      <label /*htmlFor="email"*/ className="modal__label">
         Email{" "}
         <input
           type="email"
@@ -65,7 +65,7 @@ const LoginModal = ({
           required
         />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label /*htmlFor="password"*/ className="modal__label">
         Password{" "}
         <input
           type="text"

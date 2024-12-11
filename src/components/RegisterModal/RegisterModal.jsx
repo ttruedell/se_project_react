@@ -58,7 +58,7 @@ const RegisterModal = ({
       isSubmitDisabled={isSubmitDisabled}
       onSwitchModal={handleUserModal}
     >
-      <label htmlFor="email" className="modal__label">
+      <label /*htmlFor="email"*/ className="modal__label">
         Email{" "}
         <input
           type="email"
@@ -70,7 +70,7 @@ const RegisterModal = ({
           required
         />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label /*htmlFor="password"*/ className="modal__label">
         Password{" "}
         <input
           type="text"
@@ -83,7 +83,7 @@ const RegisterModal = ({
           required
         />
       </label>
-      <label htmlFor="name" className="modal__label">
+      <label /*htmlFor="name"*/ className="modal__label">
         Name{" "}
         <input
           type="text"
@@ -96,7 +96,7 @@ const RegisterModal = ({
           required
         />
       </label>
-      <label htmlFor="avatar-url" className="modal__label">
+      <label /*htmlFor="avatar-url"*/ className="modal__label">
         Avatar URL{" "}
         <input
           type="url"

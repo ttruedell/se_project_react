@@ -11,6 +11,8 @@ import { ApiKey, coordinates } from "../../utils/constants";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal";
 import { getItems, addItem, deleteItem } from "../../utils/api";
 
@@ -146,6 +148,16 @@ function App() {
           handleCloseModal={closeActiveModal}
           isOpen={activeModal === "add-garment"}
           onAddItem={handleAddItemSubmit}
+        />
+        <LoginModal
+          handleCloseModal={closeActiveModal}
+          isOpen={activeModal === "add-garment"}
+          // onLogin={handleAddItemSubmit}
+        />
+        <RegisterModal
+          handleCloseModal={closeActiveModal}
+          isOpen={activeModal === "add-garment"}
+          // onRegister={handleAddItemSubmit}
         />
         <ItemModal
           activeModal={activeModal}

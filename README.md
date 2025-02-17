@@ -89,7 +89,8 @@ A React-based web application that allows users to browse, like, and manage clot
    ```
 
 2. **Visit the App:**  
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+   Open [https://wtwr2.twilightparadox.com](https://wtwr2.twilightparadox.com)
+   or [https://www.wtwr2.twilightparadox.com](https://www.wtwr2.twilightparadox.com) in your browser.
 
 3. **Register or Log In:**
 
